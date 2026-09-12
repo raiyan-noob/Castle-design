@@ -1,0 +1,259 @@
+ 
+.cd-section {
+  background: var(--color-cream);
+  color: var(--color-black);
+  padding: 6rem 1.5rem;
+  font-family: var(--font-body);
+}
+ 
+.cd-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(1rem, 4vw, 4.5rem);
+  align-items: center;
+}
+
+.cd-copy,
+.cd-visual {
+  min-width: 0;
+}
+ 
+/* ---- Left column: copy + steps ---------------------------------------- */
+ 
+.cd-eyebrow {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-gold);
+  letter-spacing: 0.02em;
+}
+ 
+.cd-heading {
+  margin: 0 0 3rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 3.4vw, 2.9rem);
+  line-height: 1.15;
+  color: var(--color-maroon-dark);
+}
+ 
+.cd-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.cd-step {
+  display: grid;
+  grid-template-columns: 3.25rem 1fr;
+  gap: 1.25rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--color-cream-alt);
+}
+ 
+.cd-step:first-child {
+  border-top: 1px solid var(--color-cream-alt);
+}
+ 
+.cd-step-number {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-gold);
+  -webkit-text-stroke: 1px var(--color-maroon);
+}
+ 
+.cd-step-title {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-black);
+}
+ 
+.cd-step-copy {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+ 
+/* ---- Right column: drafted house illustration -------------------------- */
+ 
+.cd-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.cd-blueprint {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px -25px rgba(92, 44, 34, 0.45);
+}
+ 
+.cd-blueprint-bg {
+  fill: var(--color-maroon-dark);
+}
+ 
+.cd-grid line {
+  stroke: rgba(217, 169, 78, 0.14);
+  stroke-width: 1;
+}
+ 
+.cd-house .cd-roof,
+.cd-house .cd-walls,
+.cd-house .cd-ridge,
+.cd-house .cd-window,
+.cd-house .cd-window-bar,
+.cd-house .cd-eave,
+.cd-house .cd-ground {
+  fill: none;
+  stroke: var(--color-cream-alt);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+ 
+.cd-house .cd-door {
+  fill: var(--color-maroon);
+  stroke: var(--color-cream-alt);
+  stroke-width: 2;
+}
+ 
+.cd-house .cd-doorknob {
+  fill: var(--color-gold);
+}
+ 
+.cd-dims line {
+  stroke: var(--color-gold);
+  stroke-width: 1.25;
+}
+ 
+.cd-dims text {
+  fill: var(--color-gold);
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+ 
+.cd-swoosh {
+  stroke: var(--color-gold);
+  stroke-width: 4;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+ 
+.cd-caption {
+  margin-top: 1.25rem;
+}
+ 
+.cd-caption-label {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-maroon);
+}
+ 
+/* ---- Responsive --------------------------------------------------------- */
+ 
+@media (max-width: 860px) {
+  .cd-container {
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 38%);
+  }
+
+  .cd-heading {
+    font-size: clamp(1.7rem, 5vw, 2.4rem);
+    margin-bottom: 2rem;
+  }
+
+  .cd-step {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 1.25rem 0;
+  }
+
+  .cd-step-number {
+    font-size: 1.6rem;
+  }
+
+  .cd-step-title {
+    font-size: 1.05rem;
+  }
+
+  .cd-step-copy {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cd-section {
+    padding: 3.5rem 1rem;
+  }
+
+  .cd-container {
+    grid-template-columns: minmax(0, 1fr) minmax(105px, 34%);
+    gap: 0.75rem;
+  }
+
+  .cd-eyebrow {
+    font-size: 0.85rem;
+  }
+
+  .cd-heading {
+    font-size: clamp(1.35rem, 6vw, 1.8rem);
+    margin-bottom: 1rem;
+  }
+
+  .cd-step {
+    grid-template-columns: 1.75rem minmax(0, 1fr);
+    gap: 0.4rem;
+    padding: 0.9rem 0;
+  }
+
+  .cd-step-number {
+    font-size: 1.2rem;
+    -webkit-text-stroke: 0.5px var(--color-maroon);
+  }
+
+  .cd-step-title {
+    font-size: 0.85rem;
+  }
+
+  .cd-step-copy {
+    font-size: 0.7rem;
+    line-height: 1.45;
+  }
+
+  .cd-caption {
+    margin-top: 0.6rem;
+  }
+
+  .cd-caption-label {
+    font-size: 0.75rem;
+  }
+}
+ 
+/* ---- Accessibility -------------------------------------------------------- */
+ 
+.cd-step:focus-within .cd-step-title {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .cd-section * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+ 

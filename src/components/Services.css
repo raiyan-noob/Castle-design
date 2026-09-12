@@ -1,0 +1,126 @@
+
+.svc-section {
+  background: var(--color-cream);
+  padding: 5rem 1.5rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+.svc-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.svc-heading {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  color: var(--color-black);
+}
+
+.svc-subheading {
+  margin: 0 auto 3.5rem;
+  max-width: 46ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.svc-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svc-icon {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 1.25rem;
+  color: var(--color-maroon);
+  display: grid;
+  place-items: center;
+  font-size: 3.25rem;
+}
+
+.svc-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.svc-card-title {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--color-black);
+}
+
+.svc-card-copy {
+  margin: 0 0 1.5rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 26ch;
+}
+
+.svc-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  background: var(--color-gold);
+  color: var(--color-maroon-dark);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.svc-cta:hover {
+  background: #e6bb6c;
+  transform: translateY(-1px);
+}
+
+.svc-cta:focus-visible {
+  outline: 2px solid var(--color-maroon);
+  outline-offset: 3px;
+}
+
+.svc-cta-arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.svc-cta:hover .svc-cta-arrow {
+  transform: translateX(3px);
+}
+
+/* ---- Responsive --------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .svc-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 320px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svc-cta,
+  .svc-cta-arrow {
+    transition: none;
+  }
+}
