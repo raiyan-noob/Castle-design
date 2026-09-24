@@ -73,7 +73,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="hero__btn hero__btn--primary"
           >
-            Book a 
+            Book a Meeting
           </a>
           <Link to="/contact" className="hero__btn hero__btn--secondary">
             Contact Us
