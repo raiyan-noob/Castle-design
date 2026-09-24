@@ -4,7 +4,7 @@ import Footer from "./shared/Footer";
 import "./Projects.css";
 
 const PROJECT_ASSETS = import.meta.glob(
-  "../assets/{finished_residential,finished_commercial}/*.{jpg,jpeg,png}",
+  "../assets/{finished_residential,finished_commercial,ongoing_residential}/*.{jpg,jpeg,png}",
   {
     eager: true,
     import: "default",
@@ -34,6 +34,7 @@ const PROJECT_GROUPS = [
     category: "Residential",
     status: "Ongoing projects",
     projects: [
+      {image: PROJECT_ASSETS["../assets/ongoing_residential/Shyamoli1.jpeg"], location: "Shyamoli, Dhaka", post: "https://www.facebook.com/share/p/1DNSisP2iK/" },
     ],
   },
   {
