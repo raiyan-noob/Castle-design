@@ -9,14 +9,13 @@ const PHONE_DISPLAY = "+880 1641-834176";
 const PHONE_NUMBER = "+8801641834176";
 const WHATSAPP_NUMBER = "+8801641834176";
 const MESSENGER_URL = "https://m.me/castledbd";
+const PHONE_NUMBERS = [
+  { value: PHONE_DISPLAY, href: `tel:${PHONE_NUMBER}` },
+  { value: "+880 17 8170 9971", href: "tel:+8801781709971" },
+  { value: "+880 17 11390807", href: "tel:+8801711390807" },
+];
 
 const CONTACT_CHANNELS = [
-  {
-    label: "Call us",
-    value: PHONE_DISPLAY,
-    href: `tel:${PHONE_NUMBER}`,
-    icon: "fa-solid fa-phone",
-  },
   {
     label: "WhatsApp",
     value: PHONE_DISPLAY,
@@ -39,8 +38,20 @@ const CONTACT_CHANNELS = [
   },
 ];
 
+const ADDRESSES = [
+  {
+    label: "Mirpur",
+    value: "House# 1/1, Road# 4, Block# C, Section# 13, Mirpur, Dhaka-1216",
+  },
+  {
+    label: "Bashundhara",
+    value: "House# 1140, Road# 17, Block# I, Bashundhara R/A, Dhaka",
+  },
+];
+
 export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", query: "" });
+  const [showPhoneNumbers, setShowPhoneNumbers] = useState(false);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -147,6 +158,42 @@ export default function Contact() {
               </p>
             </div>
             <div className="contact-channels">
+              <div className={`contact-call${showPhoneNumbers ? " is-expanded" : ""}`}>
+                <div className="contact-call__header">
+                  <a className="contact-channel contact-call__link" href={PHONE_NUMBERS[0].href}>
+                    <span className="contact-channel__icon" aria-hidden="true">
+                      <i className="fa-solid fa-phone" />
+                    </span>
+                    <span>
+                      <small>Call us</small>
+                      <strong>{PHONE_NUMBERS[0].value}</strong>
+                    </span>
+                  </a>
+                  <button
+                    className="contact-call__toggle"
+                    type="button"
+                    aria-label={showPhoneNumbers ? "Hide additional phone numbers" : "Show additional phone numbers"}
+                    aria-expanded={showPhoneNumbers}
+                    aria-controls="contact-phone-options"
+                    onClick={() => setShowPhoneNumbers((isVisible) => !isVisible)}
+                  >
+                    <i
+                      className="fa-solid fa-chevron-down contact-channel__arrow contact-call__chevron"
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+                {showPhoneNumbers && (
+                  <div className="contact-phone-options" id="contact-phone-options">
+                    {PHONE_NUMBERS.slice(1).map((phone) => (
+                      <a className="contact-phone-option" href={phone.href} key={phone.href}>
+                        <span>{phone.value}</span>
+                        <i className="fa-solid fa-phone" aria-hidden="true" />
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
               {CONTACT_CHANNELS.map((channel) => (
                 <a
                   className="contact-channel"
@@ -166,6 +213,29 @@ export default function Contact() {
                 </a>
               ))}
             </div>
+            <section className="contact-locations" aria-labelledby="contact-locations-title">
+              <h3 id="contact-locations-title">Visit us</h3>
+              <div className="contact-location-list">
+                {ADDRESSES.map((address) => (
+                  <a
+                    className="contact-location"
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.value)}`}
+                    key={address.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="contact-location__icon" aria-hidden="true">
+                      <i className="fa-solid fa-location-dot" />
+                    </span>
+                    <span className="contact-location__copy">
+                      <strong>{address.label}</strong>
+                      <span>{address.value}</span>
+                    </span>
+                    <i className="fa-solid fa-arrow-up-right-from-square contact-location__arrow" aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            </section>
           </aside>
         </section>
       </main>
