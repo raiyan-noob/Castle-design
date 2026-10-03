@@ -142,7 +142,7 @@ export default function Contact() {
                 />
               </label>
               <button className="contact-submit" type="submit">
-                Send to Messenger
+                Submit
                 <i className="fa-solid fa-arrow-right" aria-hidden="true" />
               </button>
             </form>
