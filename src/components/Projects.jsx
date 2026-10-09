@@ -35,6 +35,7 @@ const PROJECT_GROUPS = [
     status: "Ongoing projects",
     projects: [
       {image: PROJECT_ASSETS["../assets/ongoing_residential/Shyamoli1.jpeg"], location: "Shyamoli, Dhaka", post: "https://www.facebook.com/share/p/1DNSisP2iK/" },
+      {image: PROJECT_ASSETS["../assets/ongoing_residential/Uttara1.jpeg"], location: "Uttara Sector 18, Dhaka", post: "https://www.facebook.com/share/p/1C2ujMApye/" },
     ],
   },
   {
@@ -42,6 +43,7 @@ const PROJECT_GROUPS = [
     status: "Finished projects",
     projects: [
       { image: PROJECT_ASSETS["../assets/finished_commercial/uttara_sector4.jpg"], location: "Uttara Sector 4, Dhaka", post: "https://www.facebook.com/share/p/1LaGJc9r19/" },
+      
     ],
   },
   {
